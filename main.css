@@ -1,0 +1,717 @@
+/* 기본 CSS */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-bright);
+}
+
+ul,li{list-style:none;}
+
+* a{
+    text-decoration: none;
+}
+
+.img{
+    background-size: cover;
+    background-position: center;
+}
+
+.point{
+    font-weight: 400; color: rgba(255,138,0,1.0);
+}
+.point2{
+    font-weight: 400; color: #fff;
+}
+
+.textbox{
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+.textbox label{
+    top: -5px;
+    left: 1px;
+    position: absolute;
+    padding: .8em .5em;
+    color: #fff;
+    cursor: text;
+}
+
+input{
+    width: 100%;
+    height: auto;
+    line-height: normal;
+    padding: .8em .5em;
+    background: none;
+    border: none;
+    outline-style: none;
+    font-family: inherit;
+    appearance: none;
+}
+
+/* 변수 선언 */
+
+:root{
+    
+    /* 컬러  */
+    --fill-zero: rgba(0,0,0,0);
+
+    --fill-bright: rgba(255,138,0,1.0);
+    
+    --fill-bright-dark: rgba(92, 92, 92, 0.9);
+    --fill-dark: rgba(71, 71, 71, 0.91);
+    --fill-deep-dark: #3b3b3b;
+    --fill-very-deep-dark: rgba(41, 41, 41, 0.9);  
+
+    --text-dark: #8f8f8f;
+    --text-bright: #fff;
+
+    --stroke-bright: rgba(255,138,0,0.7);
+    --stroke-dark: rgba(72, 72, 72, 0.2);
+    --stoke-deep-dark: #808080;
+
+    --blue: #76ceff;
+    --green: #61ff67;
+    --red: #ff8675;
+    --yellow: #ffb55f;
+    --white: #fff;
+
+}
+
+/* 폰트 관련 */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+h1{
+    font-size: 36px;
+    font-weight: 400;
+}
+
+h2{
+    font-size: 24px;
+    font-weight: 500;
+}
+
+h3{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h4{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+p{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.p2{
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+
+/* 배경 */
+
+.bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 547px;
+    min-height: 300px;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(150deg, #474747, #414141);
+}
+
+#darkbg{
+    z-index: 999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.bg-open{
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    width: 100vw;
+    
+    background: linear-gradient(150deg, #474747, #414141);
+}
+
+
+/* 버튼 */
+
+.toggle-base{
+    width: 72px;
+    height: 32px;
+    border-radius: 16px;
+    box-shadow: inset 2px 2px 4px rgba(18, 18, 18, 0.5),
+            inset -2px -2px 4px rgba(18, 18, 18, 0.05);
+    transition: all 0.2s ease-in-out;
+    background-color: var(--text-dark);
+}
+
+.toggle-button{
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    background-color: #5c5c5c;
+}
+
+/* .toggled .toggle-button{
+    transition: all 0.2s ease-in-out;
+    background-color: rgba(255, 138, 0, 1);
+} */
+
+.toggled {
+    transition: all 0.2s ease-in-out;
+    background-color: var(--fill-bright);
+}
+
+
+/* 랜딩 페이지 main */
+
+.big-title{
+    width: 216px;
+    height: 156px;
+    margin-top: 111px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.big-title h1{
+    letter-spacing: 0.4em;
+    line-height: 160%;
+    text-shadow: 0px 0px 16px var(--fill-bright);
+}
+
+
+/* 퍼스트 액티브 first-active */
+
+.slide{
+    height:100vh;
+    overflow:hidden;
+    position:relative;
+}
+
+    .slide ul{width:calc(100% * 4);display:flex;transition:0.3s;}
+    .slide li{width:calc(100% / 4);height:100vh;}
+
+
+    .slide-img{
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        height: 80%;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .slide-text{
+        position: absolute;
+        width: 100%;
+        height: 129px;
+        text-align: center;
+        bottom: 29px; 
+    }
+
+    .slide-text h3{
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--text-dark);
+    }
+
+    .slide-text b{
+        font-weight: 500;
+        color: #fff;
+    }
+
+
+    .slide li:nth-child(1) .slide-img{
+        background-image: url('resource/img_a03.png');
+    }
+    .slide li:nth-child(2) .slide-img{
+        background-image: url('resource/img_a01.png');
+    }
+    .slide li:nth-child(3) .slide-img{
+        background-image: url('resource/img_a02.png');
+    }
+
+    .slide input{display:none;}
+    .slide .bullet{
+        position: absolute;
+        bottom: 186px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 10;
+    }
+    .slide .bullet label{
+        width: 16px;
+        height: 16px;
+        margin-left: 13px;
+        margin-right: 13px;
+        border-radius: 16px;
+        border: 2px solid var(--stoke-deep-dark);
+        display: inline-block;
+        background: none;
+        font-size: 0;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    /* 슬라이드 조작 */
+    #pos1:checked ~ ul{margin-left:0;}
+    #pos2:checked ~ ul{margin-left:-100%;}
+    #pos3:checked ~ ul{margin-left:-200%;}
+    #pos4:checked ~ ul{margin-left:-300%;}
+
+    /* bullet 조작 */
+    #pos1:checked ~ .bullet label:nth-child(1),
+    #pos2:checked ~ .bullet label:nth-child(2),
+    #pos3:checked ~ .bullet label:nth-child(3),
+    #pos4:checked ~ .bullet label:nth-child(4){
+        background: var(--fill-bright);
+        border: 2px solid var(--fill-zero);
+    }
+
+
+
+    /* 메인 화면 Voice wait */
+
+    #all{
+        left: 0;
+        overflow: hidden;
+    }
+
+    .top-bar{
+        height: 60px;
+        background-color: var(--fill-very-deep-dark);
+        color: #fff;
+        display: flex;
+        align-items: center;
+    }
+
+    .top-bar i{
+        font-size: 28px;
+        margin-left: 16px;
+    }
+
+    .top-bar p{
+        font-size: 20px;
+        font-weight: 400;
+        margin-left: 42px;
+    }
+
+    .container{
+
+    }
+
+    .contain-title{
+        color: #8f8f8f;
+        font-size: 11px;
+        font-weight: 400;
+        margin-bottom: 18px;
+    }
+
+    .contain-bigText{
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .containA{
+    }
+
+    .containA-cont{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .contA{
+        width: 250px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #img-b01{
+        width: 50px;
+        height: 100px;
+        background-image: url('resource/img_b01.png');
+    }
+    #img-b02{
+        width: 150px;
+        height: 100px;
+        background-image: url('resource/img_b02.png');
+    }
+    .img-b03{
+        width: 24px;
+        height: 24px;
+        margin-bottom: 6px;
+        margin-top: 20px;
+        background-image: url('resource/img_b03.png');
+    }
+
+    .containB{
+        padding: 16px;
+        margin: 20px 10px;
+        border-radius: 12px;
+        background: #3b3b3b;
+        box-shadow: inset 2px 2px 4px rgba(18, 18, 18, 0.5),
+            inset -2px -2px 4px rgba(18, 18, 18, 0.05);
+    }
+
+    .containC{
+        padding: 16px;
+        margin: 20px 10px;
+        border-radius: 12px;
+        background: #3b3b3b;
+        box-shadow: inset 2px 2px 4px rgba(18, 18, 18, 0.5),
+            inset -2px -2px 4px rgba(18, 18, 18, 0.05);
+    }
+
+    .subfeatures{
+        
+    }
+
+
+    #btn-log{color: var(--text-dark);
+        transition: all 0.2s ease-in-out;}
+
+    #btn-display{color: var(--text-dark);
+        transition: all 0.2s ease-in-out;}
+
+    #btn-option{color: var(--blue);}
+    
+    
+    .wait-on #btn-log{color: var(--red);
+        transition: all 0.2s ease-in-out;}
+
+    .wait-on #btn-display{color: var(--green);
+        transition: all 0.2s ease-in-out;}
+
+    
+
+
+    .subfeatures-cont{
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .subfeatures li{
+        height: 72px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        /* background-color: red; */
+    }
+
+    .subfeatures li:not(:last-child){
+        border-bottom: 1px solid #717171;
+    }
+
+
+    .subfeatures-cont i{
+        margin-right: 22px;
+        font-size: 32px;
+    }
+
+    .subfeatures-cont h3{
+        font-size: 18px;
+        margin-bottom: 7px;
+        transition: all 0.2s ease-in-out;
+        color: #8f8f8f;
+    }
+
+    .wait-on .subfeatures-cont h3{
+        transition: all 0.2s ease-in-out;
+        color: #fff;
+    }
+
+    .subfeatures-cont p{
+        font-size: 12px;
+        color: #8f8f8f;
+    }
+
+
+    .sidemenu{
+        position: absolute;
+        left: -80vw;
+        top: 0;
+        z-index: 99;
+        width: 80vw;
+        height: 100vh;
+        
+        padding-left: 25px;
+        
+        background-color: #474747;
+
+    }
+
+    .sidemenu-title {
+        /* color: #fff; */
+    }
+
+    .sidemenu-title p{
+        margin-top: 44px;
+        margin-bottom: 56px;
+        font-size: 28px;
+    }
+
+    .sidemenu-cont{
+        margin-top: 10px;
+        font-size: 14px;
+        color: var(--text-dark);
+    }
+
+    .sidemenu-list p{
+        margin-top: 28px;
+        font-size: 22px;
+        margin-bottom: 28px;
+    }
+
+
+
+    /* 보이스 로그 화면 voice log  */
+
+    .btn-search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 12px;
+        background: var(--fill-dark);
+        box-shadow:  -2px -2px 4px rgba(120, 120, 120, 0.5),
+             2px 2px 4px rgba(30, 30, 30, 0.5);
+    }
+
+
+    .contain-gap{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35px;
+        width: 164px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .contain-gap i{
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--text-dark);
+    }
+
+    .contain-gap h4{
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--text-dark);
+    }
+
+
+    .log-list-container{
+
+    }
+
+    .log-list{
+
+    }
+
+    .log-list-cont{
+        opacity: 0.5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .selected .log-list-cont {
+        opacity: 1.0;
+        border-radius: 12px;
+        background: rgba(0,0,0,0.3);
+    }
+
+    .log-list-cont h4{font-size: 18px; margin-bottom: 5px;}
+    .log-list-cont p{font-size: 11px; color: #8f8f8f;}
+
+    .log-list-btn{
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        background: #474747;
+        box-shadow:  -2px -2px 4px rgba(120, 120, 120, 0.5),
+             2px 2px 4px rgba(30, 30, 30, 0.5);
+
+    }
+
+    .selected .log-list-btn {
+        background: linear-gradient(130deg, rgba(255, 138, 0, 1), rgba(255, 92, 0, 1));
+    }
+    
+
+
+
+    /* 보이스 메뉴얼 voice manual */
+
+    .contain-explain{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35px;
+        width: 256px;
+        text-align: center;
+    }
+
+    .contain-explain h4{
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--text-dark);
+    }
+
+    #log-list-cont{
+        padding: 14px;
+        margin-top: 5px;
+    }
+
+    #log-list-cont h4{
+        font-size: 18px;
+    }
+
+    .btn-display2{
+        margin-left: auto;
+        margin-top: 16px;
+        width: 76px;
+        height: 32px;
+        border-radius: 12px;
+        background: linear-gradient(130deg, rgba(255, 138, 0, 1), rgba(255, 92, 0, 1));
+        box-shadow:  -2px -2px 4px rgba(120, 120, 120, 0.5), 2px 2px 4px rgba(30, 30, 30, 0.5);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px;
+    }
+
+    .btn-display2 p{
+        font-size: 12px;
+    }
+
+    .btn-display2 i{
+        font-size: 16px;
+    }
+    
+    #find{
+        margin-bottom: 100px;
+    }
+
+
+
+    /* voiceOption 옵션 페이지 */
+
+    .option-list{
+
+    }
+
+    .option-textcolor{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;
+        margin-bottom: 42px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .option-colorbox{
+        width: 32px;
+        height: 32px;
+        border-radius: 12px;
+        box-shadow: inset 2px 2px 4px rgba(18, 18, 18, 0.5),
+            inset -2px -2px 4px rgba(18, 18, 18, 0.05);
+     
+    }
+
+    .selectedcolor{
+        /* box-shadow:  -2px -2px 4px rgba(120, 120, 120, 0.5), 2px 2px 4px rgba(30, 30, 30, 0.5); */
+        box-shadow: 0px 0px 16px rgba(255, 138, 0, 0.7);
+        border: 2px solid #fff;
+        
+    }
+
+    .option-textsize{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 24px;
+        margin-bottom: 8px;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .option-textsize a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 14px;
+        box-shadow:  -2px -2px 4px rgba(120, 120, 120, 0.5), 2px 2px 4px rgba(30, 30, 30, 0.5);
+    }
+
+    .option-textsize i{
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .option-textsize h2{
+        font-size: 32px;
+    }
+
+
+
+    /* open source */
+
+    .opencont{
+        padding: 1.5em;
+    }
+
+    .opencont h3{
+        margin-top: 18px;
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    .opencont p{
+        font-size: 18px;
+        font-weight: 300;
+    }
